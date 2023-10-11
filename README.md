@@ -10,6 +10,8 @@ No es necesario que agregue datos a ninguna base de datos o servicios, solo que 
 
 # Login
 ![Login Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/login.png)
+- El sistema protege la ruta de pruductsTable para verificar que el usuario tenga una sesión activa, de lo contrario si no tiene una sesión activa no podra ver los productos hasta iniciar sesion con un usuario valido.
+- Los campos de username y password tienen los valores necesarios para iniciar sesión con un usuario valido.
 
 # Products Table
 ![Product Table Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Tabla%20productos.png)
