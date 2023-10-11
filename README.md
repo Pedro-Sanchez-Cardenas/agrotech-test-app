@@ -15,15 +15,21 @@ No es necesario que agregue datos a ninguna base de datos o servicios, solo que 
 
 # Products Table
 ![Product Table Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Tabla%20productos.png)
+- Una vez que el usuario tiene un a sesión valida el sistema hace un fetch a la api solicita en los requerimientos para enlistar los productos.
+- Los botones de Accion como Editar y Eliminar estan disponibles para poder hacer las acciones necesarias con los registros.
 
 # Search Products Table
 ![Search in Product Table Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Campo%20Busqueda.png)
+- El sistema es capas de realizar busquedas de registros en el campo buscar, el sistema es capas de filtrar los registros por cualquier columna de la tabla.
 
 # Ordering of columns in the products table
 ![Ordering of columns in the products table Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Orden.png)
+- El sistema es capaz de ordenar los registros de a-z o z-a en cualquiera de las columnas, esto nos ayuda a tener un sistema mas funcional y que el cliente pueda analizar los registros de una forma mas facil.
 
 # Modal Create Product
 ![Modal Create Product Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Modal%20Create.png)
+- El sistema es capaz de utilizar la API solicita para registrar nuevos registros, tambien el sistema esta preparado para notificar al usuario de algun problema con el guardado de la información o en el mejor de los casos notificarle al usuario que si nuevo registro se guardo con éxito.
 
 # Modal Edit Product
 ![Modal Edit Product Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Modal%20Editar.png)
+- El sistema utilizar la misma API para editar los registros existentes en el sistema de esta forma si el usuario comete algun error al guardar su registro o simplemente quiere modificar algun campo de algun registro lo pueda hacer con un modal.
