@@ -1,64 +1,91 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-function Login() {
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+const Login = () => {
+    const [formData, setFormData] = useState({ username: "kminchelle", password: "0lelplR" });
 
-    const handleLogin = async () => {
-        try {
-            // Aquí puedes realizar la solicitud de inicio de sesión, por ejemplo, con fetch o axios.
-            // Verifica las credenciales del usuario y realiza la autenticación.
-
-            // Si el inicio de sesión es exitoso, puedes redirigir al usuario a la vista "home" u otras acciones.
-
-            // Si hay un error, puedes mostrar un mensaje de error.
-            setError('Credenciales incorrectas');
-        } catch (error) {
-            console.error('Error en el inicio de sesión', error);
-        }
+    const handleInputChange = (e) => {
+        const { name, value } = e.target;
+        setFormData({ ...formData, [name]: value });
     };
 
+    const handleLogin = () => {
+        fetch('https://dummyjson.com/auth/login', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData)
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                const { token } = data;
+                // Almacena el token en el almacenamiento local (localStorage) de manera segura.
+                localStorage.setItem('token', token);
+                // Redirige a la vista protegida (por ejemplo, ProductTable).
+                window.location.href = '/productTable';
+            })
+            .catch((error) => {
+                console.error("Error en la solicitud:", error);
+            });
+    };
+
+
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
-            <div className="max-w-md w-full p-6 bg-white shadow-md rounded-md">
-                <h2 className="text-2xl font-semibold text-center mb-6">Iniciar sesión</h2>
-                {error && <div className="text-red-600 mb-4">{error}</div>}
-                <div className="mb-4">
-                    <label htmlFor="username" className="block text-gray-600 font-medium mb-2">
-                        Nombre de usuario
-                    </label>
-                    <input
-                        type="text"
-                        id="username"
-                        className="w-full border border-gray-300 p-2 rounded-md"
-                        placeholder="Nombre de usuario"
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
-                    />
+        <div className="min-h-screen bg-blue-400 flex justify-center items-center">
+            <div className="absolute w-60 h-60 rounded-xl bg-blue-300 -top-5 -left-16 z-0 transform rotate-45 hidden md:block">
+            </div>
+            <div className="absolute w-48 h-48 rounded-xl bg-blue-300 -bottom-6 -right-10 transform rotate-12 hidden md:block">
+            </div>
+            <div className="py-12 px-12 bg-white rounded-2xl shadow-xl z-20">
+                <div>
+                    <h1 className="text-3xl font-bold text-center mb-4 cursor-pointer">Sign in</h1>
+                    <p className="w-80 text-center text-sm mb-8 font-semibold text-gray-700 tracking-wide cursor-pointer">Welcome to Agrotech test platform!</p>
                 </div>
-                <div className="mb-6">
-                    <label htmlFor="password" className="block text-gray-600 font-medium mb-2">
-                        Contraseña
-                    </label>
-                    <input
-                        type="password"
-                        id="password"
-                        className="w-full border border-gray-300 p-2 rounded-md"
-                        placeholder="Contraseña"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                    />
+                <div className="space-y-4">
+                    <form>
+                        <div className="mb-4">
+                            <label htmlFor="username" className="block text-gray-600 text-sm font-medium mb-2">
+                                Nombre de Usuario
+                            </label>
+                            <input
+                                type="text"
+                                id="username"
+                                name="username"
+                                value={formData.username}
+                                onChange={handleInputChange}
+                                placeholder="Tu nombre de usuario"
+                                className="block text-sm py-3 px-4 rounded-lg w-full border outline-none"
+                            />
+                        </div>
+                        <div className="mb-6">
+                            <label htmlFor="password" className="block text-gray-600 text-sm font-medium mb-2">
+                                Contraseña
+                            </label>
+                            <input
+                                type="password"
+                                id="password"
+                                name="password"
+                                value={formData.password}
+                                onChange={handleInputChange}
+                                placeholder="Tu contraseña"
+                                className="block text-sm py-3 px-4 rounded-lg w-full border outline-none"
+                            />
+                        </div>
+                        <div className="text-center">
+                            <button type="button"
+                                onClick={handleLogin} className="py-3 w-64 text-xl text-white bg-blue-400 hover:bg-blue-600 rounded-2xl">Sign in</button>
+                        </div>
+                    </form>
                 </div>
-                <button
-                    className="w-full bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600"
-                    onClick={handleLogin}
-                >
-                    Iniciar sesión
-                </button>
+                <div className="text-center mt-6">
+                    <p className="mt-4 text-sm">Already Have An Account? <span className="underline cursor-pointer"> Sign Up</span>
+                    </p>
+                </div>
+            </div>
+            <div className="w-40 h-40 absolute bg-blue-300 rounded-full top-0 right-12 hidden md:block"></div>
+            <div
+                className="w-20 h-40 absolute bg-blue-300 rounded-full bottom-20 left-10 transform rotate-45 hidden md:block">
             </div>
         </div>
     );
-}
+};
 
 export default Login;

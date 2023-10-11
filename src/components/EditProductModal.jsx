@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function NewProductModal({ isOpen, onClose, onSave }) {
+function EditProductModal({ isOpen, onClose, onSave }) {
    const [newProduct, setNewProduct] = useState({
       title: '',
       price: '',
@@ -50,10 +50,10 @@ function NewProductModal({ isOpen, onClose, onSave }) {
    return (
       <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center backdrop-blur-sm bg-white/30">
          <div className="bg-white rounded-lg overflow-hidden w-5/12">
-            <div className="flex items-center justify-between bg-blue-500 text-white p-4">
-               <h2 className="text-xl font-semibold">Nuevo Producto</h2>
+            <div className="flex items-center justify-between bg-yellow-500 text-white p-4">
+               <h2 className="text-xl font-semibold">Editar Producto</h2>
 
-               <button onClick={onClose} className='bg-blue-600 hover:bg-red-600 p-2 rounded-full'>
+               <button onClick={onClose} className='bg-yellow-600 hover:bg-red-600 p-2 rounded-full'>
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-x-lg" viewBox="0 0 16 16">
                      <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
                   </svg>
@@ -134,7 +134,7 @@ function NewProductModal({ isOpen, onClose, onSave }) {
                <button onClick={onClose} className="bg-gray-300 text-gray-700 p-2 rounded mr-2">
                   Cancelar
                </button>
-               <button onClick={handleSave} className="bg-blue-500 text-white p-2 rounded">
+               <button onClick={handleSave} className="bg-yellow-500 text-white p-2 rounded">
                   Guardar
                </button>
             </div>
@@ -143,4 +143,4 @@ function NewProductModal({ isOpen, onClose, onSave }) {
    );
 }
 
-export default NewProductModal;
+export default EditProductModal;
