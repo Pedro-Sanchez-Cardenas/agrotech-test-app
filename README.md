@@ -10,7 +10,7 @@ No es necesario que agregue datos a ninguna base de datos o servicios, solo que 
 
 # Login
 ![Login Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/login.png)
-- El sistema protege la ruta de pruductsTable para verificar que el usuario tenga una sesión activa, de lo contrario si no tiene una sesión activa no podra ver los productos hasta iniciar sesion con un usuario valido.
+- El sistema protege la ruta de pruductsTable para verificar que el usuario tenga una sesión activa, de lo contrario si no tiene una sesión activa no podrá ver los productos hasta iniciar sesion con un usuario valido.
 - Los campos de username y password tienen los valores necesarios para iniciar sesión con un usuario valido.
 
 # Products Table
@@ -28,7 +28,7 @@ No es necesario que agregue datos a ninguna base de datos o servicios, solo que 
 
 # Modal Create Product
 ![Modal Create Product Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Modal%20Create.png)
-- El sistema es capaz de utilizar la API solicita para registrar nuevos registros, tambien el sistema esta preparado para notificar al usuario de algun problema con el guardado de la información o en el mejor de los casos notificarle al usuario que si nuevo registro se guardo con éxito.
+- El sistema es capaz de utilizar la API solicita para registrar nuevos datos, tambien el sistema esta preparado para notificar al usuario de algun problema con el guardado de la información o en el mejor de los casos notificarle al usuario que si nuevo registro se guardo con éxito.
 
 # Modal Edit Product
 ![Modal Edit Product Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/Modal%20Editar.png)
