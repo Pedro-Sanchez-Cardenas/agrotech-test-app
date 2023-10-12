@@ -8,6 +8,10 @@ Utilizando las API'S de https://dummyjson.com realizar las siguientes pantallas 
  - Enviar liga del proyecto en github
 No es necesario que agregue datos a ninguna base de datos o servicios, solo que se muestre la informacion y pantalla.
 
+# Frameworks
+- El sistema esta desarrollado con Frontend React.
+- El diseño o estilos esta desarrollado con Tailwindcss
+
 # Login
 ![Login Photo](https://raw.githubusercontent.com/Pedro-Sanchez-Cardenas/agrotech-test-app/main/public/assetsReadme/login.png)
 - El sistema protege la ruta de pruductsTable para verificar que el usuario tenga una sesión activa, de lo contrario si no tiene una sesión activa no podrá ver los productos hasta iniciar sesion con un usuario valido.
